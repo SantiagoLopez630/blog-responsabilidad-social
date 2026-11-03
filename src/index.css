@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'DM Sans', sans-serif;
+  --font-display: 'DM Serif Display', serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-width: 320px;
+    background: #fbfcf8;
+    color: #243d34;
+    font-family: 'DM Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  *:focus-visible {
+    outline: 3px solid #e67e22;
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: #2ecc71;
+    color: #102c22;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .hero-grid {
+    background-image:
+      linear-gradient(rgba(25, 52, 42, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(25, 52, 42, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to bottom, black, transparent 95%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
